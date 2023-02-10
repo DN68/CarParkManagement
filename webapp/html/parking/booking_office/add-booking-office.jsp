@@ -1,0 +1,139 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: kazaf
+  Date: 12/4/2022
+  Time: 1:01 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Booking office</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
+          integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./img/favicon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="./css/common/main.css">
+    <link rel="stylesheet" href="./css/common/add.css">
+    <link rel="stylesheet" href="./css/common/responsive-add-update.css">
+
+</head>
+<body>
+<%@include file="../../components/header-component.jsp" %>
+<%--section--%>
+<section>
+    <%--sidebar--%>
+    <%@include file="../../components/sidebar-component.jsp" %>
+
+    <main>
+        <h1>Add Booking office</h1>
+        <hr>
+        <form action="add-booking-office" method="post">
+            <div class="mb-3 row">
+                <label for="bookingOfficeName" class="col-sm-3 col-md-3 col-lg-2 col-form-label">
+                    <strong>Booking office name <span class="text-danger">(*)</span></strong>
+                </label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input type="text" class="form-control input-group" id="bookingOfficeName" name="officeName"
+                           placeholder="Enter booking office name">
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="trip" class="col-sm-3 col-md-3 col-lg-2 col-form-label">
+                    <strong>Trip <span class="text-danger">(*)</span></strong>
+                </label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <select class="form-control input-group" id="trip" name="trip" aria-label="Default select example">
+                        <c:forEach items="${listTrips}" var="t">
+                            <option value="${t.tripId}">${t.destination}</option>
+                        </c:forEach>
+                    </select>
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="phoneNumber" class="col-sm-3 col-md-3 col-lg-2 col-form-label">
+                    <strong>Phone number <span class="text-danger">(*)</span></strong>
+                </label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input type="tel" class="form-control input-group" id="phoneNumber" name="officePhone"
+                           placeholder="Enter phone number">
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="bookingOfficeName" class="col-sm-3 col-md-3 col-lg-2 col-form-label">
+                    <strong>Place <span class="text-danger">(*)</span></strong>
+                </label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <input type="text" class="form-control input-group" id="place" name="officePlace"
+                           placeholder="Enter booking office place">
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="price" class="col-sm-3 col-md-3 col-lg-2 col-form-label">
+                    <strong>Price <span class="text-danger">(*)</span></strong>
+                </label>
+                <div class="col-sm-9 col-md-9 col-lg-10 row">
+                    <input type="number" style="margin-left: 12px;" name="officePrice" class="form-control input-group col-8" id="price"  placeholder="Enter price">
+                    <strong class="mt-1 col-4">(VNĐ)</strong>
+                    <small></small>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="contractDeadline" class="col-sm-3 col-md-3 col-lg-2 col-form-label">
+                    <strong>Contract deadline <span class="text-danger">(*)</span></strong>
+                </label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    <div class="input-date mt-3">
+                        <label for="" class="border-0 text-black">From date</label>
+                        <input type="date" class="form-control input-group border_input" id="fromDate" name="fromDate" placeholder="Enter phone number">
+                        <small></small>
+                    </div>
+                    <div class="input-date mt-3">
+                        <label for="" class="border-0 text-black">To date</label>
+                        <input type="date" class="form-control input-group border_input" id="toDate" name="toDate">
+                        <small></small>
+                    </div>
+
+                </div>
+            </div>
+            <div class="mb-3 mx-5 px-5 mt-5">
+                <button class="mx-2 btn btn-warning text-light" type="reset">
+                    <i class="fa-solid fa-arrow-rotate-left"></i>Reset
+                </button>
+                <button class="btn btn-success text-light" type="submit">
+                    <i class="fa-solid fa-plus"></i>Add
+                </button>
+            </div>
+        </form>
+    </main>
+</section>
+<script>
+    document.querySelectorAll('.drop-nav').forEach((dropNav) => {
+        dropNav.querySelector('.drop-nav-title').onclick = () => {
+            dropNav.classList.toggle('drop')
+        }
+    })
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="./js/lib/lib-validate.js"></script>
+<script src="./js/parking/add-update-booking-office.js"></script>
+<script src="./js/responsive/responsive.js"></script>
+
+</body>
+</html>

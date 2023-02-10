@@ -1,0 +1,38 @@
+.input-date label{
+    min-width: 94px;
+    padding: 8px 10px;
+    background-color: rgba(0, 0, 0, .1);
+    border: 1px solid rgb(206, 212, 218) !important;
+    border-radius: 3px;
+    /* margin-left: 12px */
+}
+
+.input-date input{
+    max-width: 306px;
+    padding: 8px;
+    transform:translateX(-4px);
+    outline: none;
+    border-radius: 3px;
+}
+
+.border-input {
+    border: 1px solid rgb(206, 212, 218);
+}
+
+.input-date{
+    position: relative;
+}
+
+.input-date label {
+    position: absolute;
+    z-index: 1000;
+}
+
+.input-date label{
+    bottom: auto;
+    left: -4px;
+}
+
+input#fromDate, input#toDate{
+    padding-left: 100px;
+}

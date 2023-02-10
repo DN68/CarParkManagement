@@ -1,0 +1,106 @@
+
+/*@media only screen and (max-width: 1024px) {*/
+/*    .input-date input {*/
+/*        max-width: 100%;*/
+/*    }*/
+
+/*    form button:first-child {*/
+/*        width: 28%;*/
+/*    }*/
+
+/*    !* form button:last-child {*/
+/*        width: 18%;*/
+/*    } *!*/
+
+/*    form {*/
+/*        display: flex;*/
+/*    }*/
+
+/*    .search-container form {*/
+/*        !* justify-content: space-between !important; *!*/
+/*        display: block !important;*/
+
+/*    }*/
+
+/*    .search-container form div:first-child {*/
+/*        width: 90% !important;*/
+/*        float: right;*/
+/*        margin-bottom: 10px;*/
+/*    }*/
+
+/*    .search-container form div:first-child button {*/
+/*        max-width: 42px !important;*/
+/*    }*/
+
+/*    .filter-field {*/
+/*        width: 70% !important;*/
+/*        float: left;*/
+/*        margin-bottom: 10px;*/
+/*    }*/
+
+/*    .search-container form button {*/
+/*        float: right;*/
+/*    }*/
+/*}*/
+
+
+@media only screen and (max-width: 768px) {
+    main {
+        width: 100% !important;
+        margin-left: 0;
+        margin-top: 62px;
+    }
+
+    section {
+        display: inline;
+        position: relative;
+    }
+
+    .form-control.input-group {
+        min-width: 90%;
+        max-width: 90%;
+    }
+
+    #sidebar {
+        position: absolute;
+        transform: translateX(-100%);
+        z-index: 1000000000;
+        top: 0;
+    }
+
+    .btn-list {
+        display: inline;
+        margin-left: 10px;
+        height: 80%;
+    }
+
+    .content {
+        display: none !important;
+    }
+
+    #close.d-inline {
+        display: inline !important;
+    }
+
+    .account {
+        display: inline;
+    }
+
+    .drop-nav-title {
+        width: 100%;
+        size: 70%;
+    }
+
+
+    #sidebar.transformX-0 {
+        transform: translateX(0%) !important;
+    }
+
+    #sidebar.transformX-100 {
+        transform: translateX(-100%) !important;
+    }
+
+    #overlay {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}

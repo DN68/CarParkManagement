@@ -1,0 +1,44 @@
+.filter-field label{
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.filter-field {
+    border: 1px solid #ccc;
+}
+
+.filter-field select{
+    padding: 5px;
+    transform:translateX(-4px);
+    border: 0;
+    outline: none;
+}
+
+.search-container form{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px 0;
+    gap:15px;
+}
+
+thead tr {
+    background-color: rgb(238, 238, 238);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(249, 249, 249);
+}
+
+td a {
+    color: rgb(51, 122, 183) !important;
+}
+
+.date-filter-field select{
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
